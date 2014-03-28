@@ -16,7 +16,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
  *
  * @author nishit
  */
-public class moviedao {
+public class MovieDao {
 
     private DataSource dataSource;
     private JdbcTemplate jdbcTemplate;

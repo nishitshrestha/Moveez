@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import moviecrud.common.Util;
-import moviecrud.dao.moviedao;
+import moviecrud.dao.MovieDao;
 import moviecrud.model.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,7 +30,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class MovieController {
 
     @Autowired
-    private moviedao mdao;
+    private MovieDao mdao;
 
     @RequestMapping(value = "/moviedetail.view")
     public String homePage(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
