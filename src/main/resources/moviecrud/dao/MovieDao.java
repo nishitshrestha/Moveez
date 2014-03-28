@@ -19,7 +19,7 @@ import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
  *
  * @author nishit
  */
-public class moviedao {
+public class MovieDao {
     
     private DataSource dataSource;
     private JdbcTemplate jdbcTemplate;
