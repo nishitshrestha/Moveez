@@ -46,6 +46,12 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
         </property>
 
     </bean>
+    
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver" 
+          p:maxUploadSize="500000"/>
+    
+    
     <!-- mysql connector configuration -->
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -57,6 +63,6 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
     </bean>
     
     <!-- Bean configuration -->
-    <bean id="movieDao" class="moviecrud.dao.MovieDao"></bean>
+    <bean id="movieDao" class="moviecrud.dao.moviedao"></bean>
             
 </beans>

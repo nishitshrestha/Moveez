@@ -1,0 +1,19 @@
+/* 
+    Document   : main
+    Created on : Mar 24, 2014, 6:44:39 PM
+    Author     : Administrator
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+.header-block{
+    border-bottom: none;
+    margin: 42px 0 21px;
+    padding-bottom: 9.5px;
+}
+.width-increased-60{
+    width:60% !important;
+}

@@ -4,8 +4,6 @@
  */
 package moviecrud.model;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
 /**
  *
  * @author nishit
@@ -13,14 +11,36 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Movie {
 
     private int movie_id;
-    @NotEmpty(message="Movie name cannot be empty")
     private String movie_name;
-    @NotEmpty(message="Actor name cannot be empty")
     private String actor;
-    @NotEmpty(message="Actress name cannot be empty")
-    private String actress;
-    @NotEmpty(message="Director name cannot be empty")
     private String director;
+    private String movie_detail;
+    private String movie_year;
+    private String movie_img;
+
+    public String getMovie_img() {
+        return movie_img;
+    }
+
+    public void setMovie_img(String movie_img) {
+        this.movie_img = movie_img;
+    }
+
+    public String getMovie_year() {
+        return movie_year;
+    }
+
+    public void setMovie_year(String movie_year) {
+        this.movie_year = movie_year;
+    }
+
+    public String getMovie_detail() {
+        return movie_detail;
+    }
+
+    public void setMovie_detail(String movie_detail) {
+        this.movie_detail = movie_detail;
+    }
 
     public int getMovie_id() {
         return movie_id;
@@ -44,14 +64,6 @@ public class Movie {
 
     public void setActor(String actor) {
         this.actor = actor;
-    }
-
-    public String getActress() {
-        return actress;
-    }
-
-    public void setActress(String actress) {
-        this.actress = actress;
     }
 
     public String getDirector() {
