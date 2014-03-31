@@ -13,16 +13,18 @@ import org.springframework.web.multipart.MultipartFile;
  * @author Administrator
  */
 public class Util {
-    
+
     private static String imgDir = "img";
-    
-    public static void validateImageType(MultipartFile image) {
+
+    public static boolean validateImageType(MultipartFile image) {
         if (!image.getContentType().equals("image/jpeg")) {
-            throw new RuntimeException("Only jpeg image format is allowed");
+            return false;
+        } else {
+            return true;
         }
     }
-    
-    public static void saveImage(String webRoot,MultipartFile image, String fileName) {
+
+    public static void saveImage(String webRoot, MultipartFile image, String fileName) {
         try {
             File file = new File(webRoot + imgDir + "/" + fileName + ".jpg");
             FileUtils.writeByteArrayToFile(file, image.getBytes());
@@ -39,11 +41,11 @@ public class Util {
      * @return
      */
     public static String generateImageName(String movie_name) {
-        
+
         String image_name = movie_name.replaceAll("\\s", "_");
         return image_name;
     }
-    
+
     public static void main(String[] args) {
         System.out.println("" + Util.generateImageName("Dark Knight"));
     }

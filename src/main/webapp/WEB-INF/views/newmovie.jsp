@@ -105,7 +105,7 @@
                                     <label class="col-lg-2 control-label" for="inputImage">Image</label>
                                     <div class="col-lg-10">                                
                                         <input id="fileInput" name="image" type="file"/>
-                                        <label class="control-label" for="inputImage"></label>
+                                        <label class="control-label" for="inputImage">${fileError}</label>
                                     </div>
                                 </div>
 

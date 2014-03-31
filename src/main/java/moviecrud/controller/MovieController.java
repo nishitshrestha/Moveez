@@ -71,7 +71,11 @@ public class MovieController {
         if (!image.isEmpty()) //check if the image is empty
         {
             //check image type
-            Util.validateImageType(image); //validate input image type
+            boolean isImage = Util.validateImageType(image); //validate input image type
+            if (!isImage) {
+                redirectAttr.addFlashAttribute("fileError", "Image can be jpt format only.");
+                return "redirect:newmovie.view";
+            }
             Util.saveImage(request.getRealPath("/"), image, Util.generateImageName(movie.getMovie_name()));
             movie.setMovie_img(Util.generateImageName(movie.getMovie_name() + ".jpg"));
         } else {
