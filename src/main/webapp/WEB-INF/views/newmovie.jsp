@@ -63,42 +63,49 @@
                                 <legend>Add Movie</legend>
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label" for="inputMovieName">Movie Name</label>
-                                    <div class="col-lg-10">
+                                    <div class="col-lg-10">                                      
                                         <form:input path="movie_name" id="inputMovieName" class="form-control" placeholder="Movie Name"/>
+                                        <!--                                        <label class="control-label" for="inputMovieName"></label>-->
+                                        <label class="control-label" for="inputMovieName"><form:errors path="movie_name"/></label>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label" for="inputStarsName">Stars</label>
-                                    <div class="col-lg-10">
+                                    <div class="col-lg-10">                         
                                         <form:input path="actor" id="inputStarsName" class="form-control" placeholder="Stars"/>
+                                        <label class="control-label" for="inputMovieName"><form:errors path="actor"/></label>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label" for="inputDirectorName">Director</label>
-                                    <div class="col-lg-10">
+                                    <div class="col-lg-10">                        
                                         <form:input path="director" id="inputDirectorName" class="form-control" type="text" placeholder="Director"/>
+                                        <label class="control-label" for="inputMovieName"><form:errors path="director"/></label>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label" for="inputDescription">Description</label>
-                                    <div class="col-lg-10">
+                                    <div class="col-lg-10">                             
                                         <form:input path="movie_detail" id="inputDescription" class="form-control" type="text" placeholder="Brief Detail"/>
+                                        <label class="control-label" for="inputMovieName"><form:errors path="movie_detail"/></label>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label" for="inputReleasedYear">Released Year</label>
-                                    <div class="col-lg-10">
+                                    <div class="col-lg-10">      
                                         <form:input path="movie_year" id="inputYear" class="form-control" type="text" placeholder="Released Year"/>
+                                        <form:errors path="movie_year" class="control-label" for="inputMovieName"/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-lg-2 control-label" for="inputImage">Image</label>
-                                    <div class="col-lg-10">
+                                    <div class="col-lg-10">                                
                                         <input id="fileInput" name="image" type="file"/>
+                                        <label class="control-label" for="inputImage"></label>
                                     </div>
                                 </div>
 

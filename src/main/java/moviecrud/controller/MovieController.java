@@ -11,6 +11,7 @@ import javax.validation.Valid;
 import moviecrud.common.Util;
 import moviecrud.dao.MovieDao;
 import moviecrud.model.Movie;
+import moviecrud.validator.AddMovieValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -31,6 +32,8 @@ public class MovieController {
 
     @Autowired
     private MovieDao mdao;
+    @Autowired
+    private AddMovieValidator addValidator;
 
     @RequestMapping(value = "/moviedetail.view")
     public String homePage(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
@@ -57,11 +60,12 @@ public class MovieController {
     }
 
     @RequestMapping(value = "/insertMovie.do", method = RequestMethod.POST)
-    public String addNewMovie(@Valid @ModelAttribute("newMovie") Movie movie, BindingResult result, ModelMap model,
+    public String addNewMovie(@ModelAttribute("newMovie") Movie movie, BindingResult result, ModelMap model,
             RedirectAttributes redirectAttr, @RequestParam(value = "image", required = false) MultipartFile image, HttpServletRequest request) {
+
+        addValidator.validate(movie, result);
         if (result.hasErrors()) {
             redirectAttr.addFlashAttribute("errors", result);
-            redirectAttr.addFlashAttribute("newMovie", movie);
             return "redirect:newmovie.view";
         }
         if (!image.isEmpty()) //check if the image is empty
@@ -75,7 +79,7 @@ public class MovieController {
         }
         mdao.insertMovieDetail(movie);
         redirectAttr.addFlashAttribute("msg", "Your Data has been successfully entered");
-        return "redirect:newmovie.view";
+        return "redirect:moviedetail.view";
     }
     /*
      @RequestMapping(value = "/delete.do")

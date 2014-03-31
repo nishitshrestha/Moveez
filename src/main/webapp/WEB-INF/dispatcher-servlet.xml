@@ -28,6 +28,14 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
     <!-- Enable annotation driven controllers, validation etc... -->
 
     <context:property-placeholder location="classpath:conf.properties" />
+
+    <!-- Register the properties files -->
+    <bean id="messageSource"
+          class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="ErrorMessages" />
+<!--        <property name="useCodeAsDefaultMessage" value="true" />-->
+    </bean>
+
     <mvc:annotation-driven />
 
     <bean id="viewResolver"
@@ -64,5 +72,9 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
     
     <!-- Bean configuration -->
     <bean id="movieDao" class="moviecrud.dao.MovieDao"></bean>
+    
+    <bean id="AddValidator" class="moviecrud.validator.AddMovieValidator"/>
+    
+    
             
 </beans>
