@@ -6,3 +6,7 @@ Database Set : Use Mysql. Just run MovieCrud.sql in mysql terminal.
 
 Change database connection setting in web-inf/conf.properties
 
+This project is up and running in http://moveez.nishitshrestha.cloudbees.net/moviedetail.view
+
+
+
