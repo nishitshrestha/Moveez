@@ -47,6 +47,6 @@ public class Util {
     }
 
     public static void main(String[] args) {
-        System.out.println("" + Util.generateImageName("Dark Knight"));
+        System.out.println("" + Util.generateImageName("The Dark Knight Rises"));
     }
 }

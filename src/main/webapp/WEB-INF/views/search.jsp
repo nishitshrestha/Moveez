@@ -1,16 +1,11 @@
-<%-- 
-   Document   : moviedetail
-    Created on : Mar 10, 2014, 8:13:34 PM
-    Author     : nishit
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Movie Details</title>
+<title>Search Movie</title>
 <!--        <link href="../theme/css/bootstrap.min.css" rel="stylesheet">-->
 <link href="./theme/css/bootstrap-yeti.min.css" rel="stylesheet">
 <link href="./theme/css/main.css" rel="stylesheet">
@@ -19,7 +14,6 @@
 
 </head>
 <body>
-
 	<!-----Header this is repetive. I will later use tiles ------------>
 	<div class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
@@ -31,13 +25,14 @@
 					<li class="active"><a href="./moviedetail.view">Home</a></li>
 					<li><a href="./newmovie.view">Add New Movie</a></li>
 				</ul>
-				<form action="./search.view" class="navbar-form navbar-left">
+				<form class="navbar-form navbar-left" action="./search.view">
 					<input class="form-control col-lg-8" type="text"
 						placeholder="Search By Movie Name" name="name">
 				</form>
 			</div>
 		</div>
 	</div>
+
 
 	<div class="container">
 		<div id="banner" class="header-block">
@@ -53,7 +48,7 @@
 
 		<div class="row">
 			<!-------Div for movie details --------->
-			<c:forEach var="movie" items="${movieList}">
+			<c:forEach var="movie" items="${searchList}">
 				<div class="col-lg-6" style="width: 80%;">
 					<div class="well sponsor" style="overflow: auto;">
 						<span style="float: left; margin-right: 15px;"> <img
@@ -77,6 +72,5 @@
 			</c:forEach>
 			<!------End of div-------------------------->
 		</div>
-	</div>
 </body>
 </html>
